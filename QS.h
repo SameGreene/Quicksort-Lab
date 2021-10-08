@@ -2,12 +2,18 @@
 #define QS_H
 #include "QSInterface.h"
 
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <sstream>
+#include <string>
 
 using namespace std;
 
 class QS: public QSInterface {
+private:
+    int capacity;
+    int* arrPtr;
+    int elements;
+
 public:
     QS();
     ~QS();
