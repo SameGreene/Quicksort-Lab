@@ -3,6 +3,10 @@
 QS::QS(){};
 QS::~QS(){};
 
+bool QS::createArray(int capacity){
+
+}
+
 void QS::sortAll(){
 
 }
@@ -24,10 +28,6 @@ int QS::getSize(){
 }
 
 bool QS::addToArray(int value){
-
-}
-
-bool QS::createArray(int capacity){
 
 }
 
