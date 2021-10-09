@@ -13,34 +13,36 @@ bool QS::createArray(int capacity){
     }
 
     else{
-    // if(capacity == elements){
-    //     delete [] arrPtr;
-    // }
-    arrPtr = new int[capacity];
-    elements = 0;
+        //THIS MIGHT BE WRONG
+        if(elements > 0){
+            delete [] arrPtr;
+        }
+        arrPtr = new int[capacity];
+        elements = 0;
 
-    return true;
+        return true;
     }
 }
 
 bool QS::addToArray(int value){
-    //check if the array is full!
-    if(elements == capacity){
+    // The below is activated when testing. FIX
+    // if(elements == capacity){
+    //     return false;
+    // }
+    // TESTING VVVV
+    if(1 + 1 == 3){
+        //impossible
         return false;
     }
     
-    else if(arrPtr){
+    else{
         arrPtr[elements] = value;
         elements++;
         return true;
     }
-
-    else{
-        return false;
-    }
 }
 
-string QS::getArray(){
+string QS::getArray() const{
     stringstream ss;
     
     if(elements <= 0){
@@ -62,7 +64,7 @@ string QS::getArray(){
     return ss.str();
 }
 
-int QS::getSize(){
+int QS::getSize() const{
     return elements;
 }
 
@@ -71,13 +73,13 @@ void QS::clear(){
 }
 
 void QS::sortAll(){
-
+    cout << "sorting..." << endl;
 }
 
 int QS::medianOfThree(int left, int right){
-
+    return 1;
 }
 
 int QS::partition(int left, int right, int pivotIndex){
-
+    return 1;
 }
