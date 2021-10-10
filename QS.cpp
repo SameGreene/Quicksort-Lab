@@ -115,5 +115,53 @@ int QS::medianOfThree(int left, int right){
 }
 
 int QS::partition(int left, int right, int pivotIndex){
-    return 1;
+    if(elements == 0){
+        return -1;
+    }
+    if(left < 0){
+        return -1;
+    }
+    if(right < 0){
+        return -1;
+    }
+    if(left > elements - 1){
+        return -1;
+    }
+    if(right > elements - 1){
+        return -1;
+    }
+    if(right <= left){
+        return -1;
+    }
+    if(pivotIndex <= left || pivotIndex >= right){
+        return -1;
+    }
+
+    int placeholder;
+    placeholder = arrPtr[pivotIndex];
+    arrPtr[pivotIndex] = arrPtr[left];
+    arrPtr[left] = placeholder;
+
+    int up = left + 1;
+    int down = right;
+
+    do{
+        while((arrPtr[up] <= arrPtr[left]) && (up < right)){
+            up++;   
+        }
+        while((arrPtr[down] > arrPtr[left]) && (down > left)){
+            down--;
+        }
+        if(up < down){
+            placeholder = arrPtr[up];
+            arrPtr[up] = arrPtr[down];
+            arrPtr[down] = placeholder;
+        }
+    } while(up < down);
+
+    placeholder = arrPtr[left];
+    arrPtr[left] = arrPtr[down];
+    arrPtr[down] = placeholder;
+
+    return down;
 }
