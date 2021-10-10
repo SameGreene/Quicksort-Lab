@@ -27,7 +27,6 @@ bool QS::createArray(int cap){
 }
 
 bool QS::addToArray(int value){
-    // The below is activated when testing. FIX
     if(elements == capacity){
         return false;
     }
@@ -70,11 +69,49 @@ void QS::clear(){
 }
 
 void QS::sortAll(){
-    cout << "sorting..." << endl;
+
 }
 
 int QS::medianOfThree(int left, int right){
-    return 1;
+    if(elements == 0){
+        return -1;
+    }
+    if(left < 0){
+        return -1;
+    }
+    if(right < 0){
+        return -1;
+    }
+    if(left > elements - 1){
+        return -1;
+    }
+    if(right > elements - 1){
+        return -1;
+    }
+    if(right <= left){
+        return -1;
+    }
+    
+    int placeholder;
+    int middle = (left + right) / 2;
+    
+    if(arrPtr[left] > arrPtr[middle]){
+        placeholder = arrPtr[left];
+        arrPtr[left] = arrPtr[middle];
+        arrPtr[middle] = placeholder;
+    }
+    if(arrPtr[middle] > arrPtr[right]){
+        placeholder = arrPtr[middle];
+        arrPtr[middle] = arrPtr[right];
+        arrPtr[right] = placeholder;
+    }
+    if(arrPtr[left] > arrPtr[middle]){
+        placeholder = arrPtr[left];
+        arrPtr[left] = arrPtr[middle];
+        arrPtr[middle] = placeholder;
+    }
+
+    return middle;
 }
 
 int QS::partition(int left, int right, int pivotIndex){
