@@ -11,7 +11,7 @@ using namespace std;
 class QS: public QSInterface {
 private:
     int capacity;
-    int* arrPtr;
+    int *arrPtr;
     int elements;
 
 public:

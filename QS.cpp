@@ -3,20 +3,22 @@
 #include <string>
 
 QS::QS(){}
-QS::~QS(){}
+QS::~QS(){
+    delete [] arrPtr;
+}
 
-bool QS::createArray(int capacity){
+bool QS::createArray(int cap){
     elements = -1;
-    
+
     if(capacity < 0){
         return false;
     }
 
     else{
-        //THIS MIGHT BE WRONG
         if(elements > 0){
             delete [] arrPtr;
         }
+        capacity = cap;
         arrPtr = new int[capacity];
         elements = 0;
 
@@ -26,12 +28,7 @@ bool QS::createArray(int capacity){
 
 bool QS::addToArray(int value){
     // The below is activated when testing. FIX
-    // if(elements == capacity){
-    //     return false;
-    // }
-    // TESTING VVVV
-    if(1 + 1 == 3){
-        //impossible
+    if(elements == capacity){
         return false;
     }
     
@@ -69,7 +66,7 @@ int QS::getSize() const{
 }
 
 void QS::clear(){
-    delete [] arrPtr;
+    elements = 0;
 }
 
 void QS::sortAll(){

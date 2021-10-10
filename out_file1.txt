@@ -8,8 +8,8 @@ getArray
  1,2,3,4,5
 clear 
 getArray
- 1589731119,5,368152592,21996,5
-getSize 5
+ 
+getSize 0
 createArray 5 True
 getArray
  
@@ -27,7 +27,7 @@ addToArray -1 True
 getSize 5
 getArray
  -5,-4,-3,-2,-1
-addToArray 6 True
-getSize 6
+addToArray 6 False
+getSize 5
 getArray
- -5,-4,-3,-2,-1,6
+ -5,-4,-3,-2,-1

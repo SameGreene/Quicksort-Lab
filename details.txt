@@ -1,9 +1,4 @@
 out_file1.txt
- 							      |	 1589731119,5,368152592,21996,5
-getSize 0						      |	getSize 5
-addToArray 6 False					      |	addToArray 6 True
-getSize 5						      |	getSize 6
- -5,-4,-3,-2,-1						      |	 -5,-4,-3,-2,-1,6
 out_file2.txt
 medianOfThree 0 4 2					      |	medianOfThree 0 4 1
  -10,5,0,-5,10						      |	 10,5,0,-5,-10
