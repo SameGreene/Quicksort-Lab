@@ -69,7 +69,18 @@ void QS::clear(){
 }
 
 void QS::sortAll(){
+    quickSort(0, elements - 1);
+}
 
+void QS::quickSort(int first, int last){
+    if(last - first < 1){
+        return;
+    }
+
+    int pivot = medianOfThree(first, last);
+    pivot = partition(first, last, pivot);
+    quickSort(first, pivot - 1);
+    quickSort(pivot + 1, last);
 }
 
 int QS::medianOfThree(int left, int right){
@@ -130,10 +141,10 @@ int QS::partition(int left, int right, int pivotIndex){
     if(right > elements - 1){
         return -1;
     }
-    if(right <= left){
+    if(left >= right){
         return -1;
     }
-    if(pivotIndex <= left || pivotIndex >= right){
+    if(pivotIndex < left || pivotIndex > right){
         return -1;
     }
 

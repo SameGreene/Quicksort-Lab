@@ -18,6 +18,7 @@ public:
     QS();
     ~QS();
     void sortAll();
+    void quickSort(int first, int last);
     int medianOfThree(int left, int right);
     int partition(int left, int right, int pivotIndex);
     string getArray() const;
